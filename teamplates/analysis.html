@@ -3,28 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analysis Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h1>Analysis for {{ platform }}</h1>
-    <p>User ID: {{ user_id if platform == 'Telegram' else user_info['id'] }}</p>
+    <div class="container">
+        <h1 class="text-center mt-5">Analysis for {{ platform }}</h1>
+        <p class="text-center">User ID: {{ user_id if platform == 'Telegram' else user_info['id'] }}</p>
 
-    <form method="POST">
-        <textarea name="texts" placeholder="Enter messages to analyze (one per line)"></textarea><br>
-        <button type="submit">Analyze</button>
-    </form>
+        <form method="POST" class="mt-4">
+            <div class="form-group">
+                <textarea class="form-control" name="texts" rows="5"
+                    placeholder="Enter messages to analyze (one per line)" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Analyze</button>
+        </form>
 
-    {% if predictions %}
-    <h2>Analysis Results:</h2>
-    <ul>
-        {% for prediction in predictions %}
-        <li>{{ prediction }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+        {% if predictions %}
+        <h2 class="mt-5">Analysis Results:</h2>
+        <ul class="list-group mt-3">
+            {% for prediction in predictions %}
+            <li class="list-group-item">{{ prediction }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
 
-    <a href="{{ url_for('logout') }}">Logout</a>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
