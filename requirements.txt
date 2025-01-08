@@ -1,0 +1,21 @@
+# Flask and related libraries
+Flask==2.0.1
+Flask-Dance==5.0.0  # Для авторизации через OAuth
+
+# Telegram and VK API libraries
+python-telegram-bot==13.7  # Для работы с Telegram API
+vk_api==11.9.0  # Для работы с ВКонтакте API
+
+# Data manipulation and analysis
+pandas==1.3.1  # Для работы с данными в табличном формате
+numpy==1.21.0  # Для работы с массивами и матрицами
+
+# Machine learning libraries
+scikit-learn==0.24.2  # Для машинного обучения
+torch==1.9.0  # Для работы с нейронными сетями
+transformers==4.6.1  # Для работы с трансформерами и NLP
+
+# Natural Language Processing libraries
+nltk==3.6.2  # Для обработки естественного языка
+spacy==3.1.0  # Для обработки естественного языка
+textblob==0.15.3  # Для простого анализа текста

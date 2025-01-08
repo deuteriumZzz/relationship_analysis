@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Result</title>
+</head>
+
+<body>
+    <h1>Analysis for {{ platform }}</h1>
+    <p>User ID: {{ user_id if platform == 'Telegram' else user_info['id'] }}</p>
+
+    <form method="POST">
+        <textarea name="texts" placeholder="Enter messages to analyze (one per line)"></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if predictions %}
+    <h2>Analysis Results:</h2>
+    <ul>
+        {% for prediction in predictions %}
+        <li>{{ prediction }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+
+</html>

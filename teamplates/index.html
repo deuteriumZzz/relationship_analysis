@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Relationship Analysis</title>
+</head>
+
+<body>
+    <h1>Welcome to Relationship Analysis</h1>
+    <p>Select a platform to log in:</p>
+    <a href="{{ url_for('login', platform='telegram') }}">Login with Telegram</a><br>
+    <a href="{{ url_for('login', platform='vk') }}">Login with VK</a>
+</body>
+
+</html>
